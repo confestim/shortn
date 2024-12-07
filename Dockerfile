@@ -13,6 +13,6 @@ RUN python /app/src/manage_users.py init
 ENV FLASK_APP=src/app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
-EXPOSE 5000
+EXPOSE 49152
 
 CMD ["flask", "run"]
