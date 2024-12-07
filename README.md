@@ -38,13 +38,13 @@ python manage_users.py list # to list users
 python manage_users.py remove --username <username> # to remove a user
 
 # Finally, running the app
-python app.py
+python app.py # Running on http://localhost:49152
 ```
 
 ## Installation (docker)
 This will init the database and create a user with the username `admin` and password `admin`.
 ```bash
-docker compose up -d # remove -d for foreground
+docker compose up -d # remove -d for foreground, it is now running on http://localhost:49152
 ```
 
 ### Users
