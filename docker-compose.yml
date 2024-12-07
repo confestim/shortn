@@ -11,3 +11,6 @@ services:
       FLASK_APP: src/app.py
       FLASK_RUN_HOST: 0.0.0.0
     command: sh -c "python /app/src/manage_users.py init && flask run"
+networks:
+  shortn-network:
+    driver: bridge
