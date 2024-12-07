@@ -15,13 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to validate URLs
     const isValidURL = (url) => {
         const pattern = new RegExp(
-            '^(https?:\\/\\/)?' + // Protocol (http or https)
-            '(([a-zA-Z0-9_-]+\\.)+[a-zA-Z]{2,6})' + // Domain name
-            '(\\/[a-zA-Z0-9@:%_\\+.~#?&//=]*)?$', // Path, query, or fragment
+            '^(https?:\\/\\/)' + // Protocol (http or https)
+            '(([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,})' + // Domain name
+            '(\\:[0-9]{1,5})?' + // Optional port number
+            '(\\/.*)?$', // Path, query string, or fragment
             'i'
         );
         return pattern.test(url);
     };
+    
 
     // Function to add https:// if missing
     const addHttpsIfMissing = (url) => {
