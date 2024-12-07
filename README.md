@@ -1,7 +1,7 @@
-<p text-align="center">
+<p align="center">
   <img src="src/static/img/favicon.png" alt="shortn logo" width="400px">
 </p>
-<h1 text-align="center"> shortn </h1>
+<h1 align="center"> shortn </h1>
 
 HTML/CSS/JS Framework Free ✅ • Lightweight ✅ • Functional ✅ • No plaintext passwords ✅
 
