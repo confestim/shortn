@@ -1,0 +1,13 @@
+services:
+  shortn:
+    build:
+      context: .
+    container_name: shortn
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src:/app/src
+    environment:
+      FLASK_APP: src/app.py
+      FLASK_RUN_HOST: 0.0.0.0
+    command: sh -c "python /app/src/manage_users.py init && flask run"
