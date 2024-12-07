@@ -74,9 +74,9 @@ def main():
         init_db()
         print("Database initialized.")
     elif args.command == 'add':
-        user = input("Enter username: ")
-        password = getpass.getpass("Enter password: ")
-        verify = getpass.getpass("Re-enter password: ")
+        user = input("Name: ")
+        password = getpass.getpass("Password: ")
+        verify = getpass.getpass("Again: ")
         if password != verify:
             print("Error: Passwords do not match.")
             sys.exit(1)
