@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/textForm.css') }}">
+{% endblock %}
+
+{% block title %}Create Redirect{% endblock %}
+
+{% block content %}
+    <h1>Create a Redirect</h1>
+    <form method="post">
+        <input type="text" name="dest_link" placeholder="https://example.com" required><br>
+        <input type="text" name="custom_link" placeholder="https://example2.com"><br>
+        <button type="submit">Create Redirect</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p class="bad-wrong">    
+            <i class="fas fa-exclamation-triangle"></i>
+            {{ message }}
+        </p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+<script src="{{ url_for('static', filename='js/validLink.js') }}" defer></script>
+
+{% endblock %}

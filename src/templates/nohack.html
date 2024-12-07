@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Please Don't Hack Me{% endblock %}
+
+{% block content %}
+    <h1>Please Don't Hack Me</h1>
+    <img src="{{ url_for('static', filename='img/cry.png') }}" alt="Crying emoji">
+    <p>Your request <span class="bad-wrong"> did not go through </span> Redirecting...</p>
+    <script>
+        setTimeout(() => {
+            window.location.href = "{{ url_for('form') }}";
+        }, 5000);
+    </script>
+{% endblock %}

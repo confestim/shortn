@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/listing.css') }}">
+{% endblock %}
+
+{% block title %}Manage Redirects{% endblock %}
+
+{% block content %}
+    <h1>Manage Redirects</h1>
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p class="success"><i class="fas fa-check"></i>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% if redirects %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Destination Link</th>
+                    <th>Custom Link</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for redirect in redirects %}
+                <tr>
+                    <td>{{ redirect[0] }}</td>
+                    <td>{{ redirect[1] }}</td>
+                    <td>
+                        {% if redirect[2] %}
+                            <a href="/r/{{ redirect[2] }}">{{ redirect[2] }}</a>
+                        {% else %}
+                            <a href="/r/{{ redirect[0] }}/">{{ redirect[0] }}</a>
+                        {% endif %}
+                    <td>
+                        <form method="post" style="display: flex;">
+                            <input type="hidden" name="redirect_id" value="{{ redirect[0] }}">
+                            <button type="submit" class="delete-button"><i class="fas fa-trash-alt"></i> Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No redirects found.</p>
+    {% endif %}
+{% endblock %}
