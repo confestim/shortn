@@ -1,5 +1,5 @@
 <p text-align="center">
-  <img src="src/static/img/favicon.png" alt="shortn logo" width="100px">
+  <img src="src/static/img/favicon.png" alt="shortn logo" width="400px">
 </p>
 <h1 text-align="center"> shortn </h1>
 
