@@ -10,7 +10,7 @@ Pure vanilla HTML/CSS/JS ✅ • Lightweight ✅ • Functional ✅ • No plain
 
 Simple link shortener built with flask.
 
-> ![IMPORTANT]
+> [!WARNING]
 > PLEASE CHANGE THE SECRET IN `app.py` BEFORE RUNNING IN PRODUCTION (this applies to the docker installation as well)
 
 - [Installation (no docker)](#installation-no-docker)
