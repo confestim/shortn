@@ -1,4 +1,6 @@
-  <img align="center" src="src/static/img/favicon.png" alt="shortn logo" width="400px">
+<p align="center">
+    <img align="center" src="src/static/img/favicon.png" alt="shortn logo" width="400px">
+</p>
 <h1 align="center"> shortn </h1>
 
 <p align="center">
