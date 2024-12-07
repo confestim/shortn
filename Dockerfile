@@ -12,6 +12,7 @@ COPY src/manage_users.py /app/src/
 RUN python /app/src/manage_users.py init
 ENV FLASK_APP=src/app.py
 ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=49152
 
 EXPOSE 49152
 

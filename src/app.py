@@ -139,6 +139,12 @@ def create_user():
             except sqlite3.IntegrityError:
                 return 'User already exists.'
 
+
+# 404
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
 if __name__ == '__main__':
     init_db()
-    app.run(debug=True)
+    app.run(debug=False)
