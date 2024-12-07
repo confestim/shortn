@@ -1,9 +1,9 @@
-<p align="center">
-  <img src="src/static/img/favicon.png" alt="shortn logo" width="400px">
-</p>
+  <img align="center" src="src/static/img/favicon.png" alt="shortn logo" width="400px">
 <h1 align="center"> shortn </h1>
 
+<p align="center">
 HTML/CSS/JS Framework Free ✅ • Lightweight ✅ • Functional ✅ • No plaintext passwords ✅
+</p>
 
 
 Simple link shortener built with flask.
