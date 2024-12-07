@@ -84,7 +84,8 @@ def verify_link(link:str) -> bool:
     if not link.startswith('http://') and not link.startswith('https://'):
         link = 'http://' + link
     reg = r'^(https?:\/\/)(([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,})(:\d+)?(\/[a-zA-Z0-9@:%_\+.~#?&//=]*)?$'
-    return False if not re.match(reg, link) else True
+    
+    return bool(re.match(reg, link))
 
 @app.route('/form', methods=['GET', 'POST'])
 def form():
