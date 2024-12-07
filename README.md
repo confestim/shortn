@@ -10,7 +10,7 @@ Pure vanilla HTML/CSS/JS ✅ • Lightweight ✅ • Functional ✅ • No plain
 
 Simple link shortener built with flask.
 
-> ![WARNING] PLEASE CHANGE THE SECRET IN `app.py` BEFORE RUNNING IN PRODUCTION (this applies to the docker installation as well)
+>![WARNING] PLEASE CHANGE THE SECRET IN `app.py` BEFORE RUNNING IN PRODUCTION (this applies to the docker installation as well)
 
 - [Installation (no docker)](#installation-no-docker)
   - [Usage](#usage)
@@ -53,7 +53,7 @@ sudo docker exec -it shortn python src/manage_users.py list
 sudo docker exec -it shortn python src/manage_users.py remove --username <username>
 ```
 
-> [!NOTE] The database is **ephemeral** and will be lost when the container is removed. That is intentional.
+>[!NOTE] The database is **ephemeral** and will be lost when the container is removed. That is intentional.
 
 ## TODOs
 - [x] basic UI (to add links)
