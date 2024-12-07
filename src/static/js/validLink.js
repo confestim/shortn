@@ -8,24 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
     destLinkError.classList.add('error-message');
     customLinkError.classList.add('error-message');
 
-    // Append error messages right after inputs
     destLinkInput.parentNode.insertBefore(destLinkError, destLinkInput.nextSibling);
     customLinkInput.parentNode.insertBefore(customLinkError, customLinkInput.nextSibling);
 
-    // Function to validate URLs
     const isValidURL = (url) => {
         const pattern = new RegExp(
-            '^(https?:\\/\\/)?' +                // Protocol (http or https)
-            '(([a-zA-Z0-9_-]+\\.)+[a-zA-Z]{2,6})' + // Domain name
-            '(\\/[a-zA-Z0-9@:%_\\+.~#?&//==-]*)?$', // Path, query, or fragment (now includes `=`)
+            '^(https?:\\/\\/)' +
+            '(([a-zA-Z0-9_-]+\\.)+[a-zA-Z]{2,})' +
+            '(\\:\\d+)?' +
+            '(\\/[a-zA-Z0-9@:%_\\+.~#?&//=~-]*)?$',
             'i'
-          );
-          
+        );
+    
         return pattern.test(url);
     };
     
 
-    // Function to add https:// if missing
     const addHttpsIfMissing = (url) => {
         if (!/^https?:\/\//i.test(url)) {
             return 'https://' + url;
@@ -33,12 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return url;
     };
 
-    // Validate destination link on input
     destLinkInput.addEventListener('blur', () => {
-        // Auto-correct the URL if missing protocol
         destLinkInput.value = addHttpsIfMissing(destLinkInput.value);
 
-        // Validate URL
         if (!isValidURL(destLinkInput.value)) {
             destLinkError.textContent = 'Please enter a valid URL (e.g., https://example.com)';
         } else {
@@ -46,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Validate custom link for valid characters
     customLinkInput.addEventListener('input', () => {
         if (customLinkInput.value && /[^a-zA-Z0-9_-]/.test(customLinkInput.value)) {
             customLinkError.textContent = 'Custom link can only contain letters, numbers, dashes, and underscores.';
@@ -55,11 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Validate form on submit
     form.addEventListener('submit', (event) => {
         let isValid = true;
 
-        // Auto-correct the URL if missing protocol
         destLinkInput.value = addHttpsIfMissing(destLinkInput.value);
 
         if (!isValidURL(destLinkInput.value)) {
@@ -73,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (!isValid) {
-            event.preventDefault(); // Prevent form submission if validation fails
+            event.preventDefault();
         }
     });
 });

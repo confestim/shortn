@@ -83,7 +83,10 @@ def logout():
 def verify_link(link:str) -> bool:
     if not link.startswith('http://') and not link.startswith('https://'):
         link = 'http://' + link
-    reg = r'^(https?:\/\/)(([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,})(:\d+)?(\/[a-zA-Z0-9@:%_\+.~#?&//=]*)?$'
+    reg = r'^(https?:\/\/)' + \
+          r'(([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,})' + \
+          r'(:\d+)?' + \
+          r'(\/[a-zA-Z0-9@:%_\+.~#?&//=~-]*)?$'
     
     return bool(re.match(reg, link))
 
