@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import re
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Replace with a strong secret key
+app.secret_key = 'super secret key' # FIXME: CHANGE THISSSSSSSSS!
 
 # Database initialization
 DATABASE = 'database.db'

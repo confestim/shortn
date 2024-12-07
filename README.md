@@ -4,19 +4,28 @@
 <h1 align="center"> shortn </h1>
 
 <p align="center">
-HTML/CSS/JS Framework Free ✅ • Lightweight ✅ • Functional ✅ • No plaintext passwords ✅
+Pure vanilla HTML/CSS/JS ✅ • Lightweight ✅ • Functional ✅ • No plaintext passwords ✅
 </p>
 
 
 Simple link shortener built with flask.
 
-## Installation
+> ![WARNING] PLEASE CHANGE THE SECRET IN `app.py` BEFORE RUNNING IN PRODUCTION (this applies to the docker installation as well)
+
+- [Installation (no docker)](#installation-no-docker)
+  - [Usage](#usage)
+- [Installation (docker)](#installation-docker)
+  - [Users](#users)
+- [TODOs](#todos)
+
+
+## Installation (no docker)
 ```bash
 git clone https://git.confest.im/boyan_k/shortn
 pip install -r requirements.txt
 ```
 
-## Usage (no docker)
+### Usage
 ```bash
 python manage_users.py init # to create the database
 python manage_users.py add # to add a user
@@ -28,10 +37,10 @@ python manage_users.py list # to list users
 python manage_users.py remove --username <username> # to remove a user
 
 # Finally, running the app
-python app.py 
+python app.py
 ```
 
-## Usage (docker)
+## Installation (docker)
 This will init the database and create a user with the username `admin` and password `admin`.
 ```bash
 docker compose up -d # remove -d for foreground
